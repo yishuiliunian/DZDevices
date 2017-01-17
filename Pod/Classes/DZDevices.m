@@ -153,6 +153,33 @@ BOOL DeviceScreenISRetain()
     });
     return isRetain;
 }
+
+NSString* DevicePlatfromString()
+{
+    static NSString* str = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        str =  [UIDeviceHardware platformString];
+    });
+    return str;
+}
+
+
+BOOL UIDeviceISIphone5s()
+{
+    static BOOL isiphone5s = NO;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        isiphone5s =  [DevicePlatfromString() isEqualToString:IPHONE_5S];
+    });
+    return isiphone5s;
+    return isiphone5s;
+}
+
+
 @implementation DZDevices
 
 @end
+
+
+

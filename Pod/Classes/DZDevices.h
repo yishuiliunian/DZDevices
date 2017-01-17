@@ -16,6 +16,8 @@ extern "C" {
     NSString* DZDevicesIdentify();
     NSDictionary* DZDevicesInfos();
     BOOL DeviceScreenISRetain();
+    NSString* DevicePlatfromString();
+    BOOL UIDeviceISIphone5s();
 #ifdef __cplusplus
 }
 #endif
